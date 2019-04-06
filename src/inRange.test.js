@@ -1,8 +1,7 @@
 // import lodashStable from 'lodash';
 import inRange from './inRange.js';
-import {test, expect} from 'jest'
 
-describe('inRange', function() {
+describe('inRange', () => {
   test('dummy, function', () => {
     expect(true).toBe(true);
   });

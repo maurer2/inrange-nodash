@@ -6,6 +6,9 @@
   "author": "Martin",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "babel-jest": "^24.7.1",
     "esm": "^3.2.22",
     "jest": "^24.7.1"
   },
