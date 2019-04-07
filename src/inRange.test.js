@@ -1,50 +1,52 @@
-// import lodashStable from 'lodash';
+import lodashStable from 'lodash';
+import { falsey, stubTrue } from './utils.js';
 import inRange from './inRange.js';
+import { escapeComponent } from 'uri-js';
 
 describe('inRange', () => {
   test('dummy, function', () => {
-    expect(true).toBe(true);
+    expect(true).toStrictEqual(true);
   });
 
-  /*
-  it('should work with an `end`', function() {
-    expect.strictEqual(inRange(3, 5), true);
-    expect.strictEqual(inRange(5, 5), false);
-    expect.strictEqual(inRange(6, 5), false);
+  test('should work with an `end`', () => {
+    expect(inRange(3, 5)).toStrictEqual(true);
+    expect(inRange(5, 5)).toStrictEqual(false);
+    expect(inRange(6, 5)).toStrictEqual(false);
   });
 
-  it('should work with a `start` and `end`', function() {
-    expect.strictEqual(inRange(1, 1, 5), true);
-    expect.strictEqual(inRange(3, 1, 5), true);
-    expect.strictEqual(inRange(0, 1, 5), false);
-    expect.strictEqual(inRange(5, 1, 5), false);
+  test('should work with a `start` and `end`', () => {
+    expect(inRange(1, 1, 5)).toStrictEqual(true);
+    expect(inRange(1, 1, 5)).toStrictEqual(true);
+    expect(inRange(0, 1, 5)).toStrictEqual(false);
+    expect(inRange(5, 1, 5)).toStrictEqual(false);
   });
 
-  it('should treat falsey `start` as `0`', function() {
-    lodashStable.each(falsey, function(value, index) {
+  test('should treat falsey `start` as `0`', () => {
+    lodashStable.each(falsey, (value, index) => {
       if (index) {
-        expect.strictEqual(inRange(0, value), false);
-        expect.strictEqual(inRange(0, value, 1), true);
+        expect(inRange(0, value)).toEqual(false);
+        expect(inRange(0, value, 1)).toStrictEqual(true);
       } else {
-        expect.strictEqual(inRange(0), false);
+        // index = 0
+        expect(inRange(0)).toStrictEqual(false);
       }
     });
   });
 
-  it('should swap `start` and `end` when `start` > `end`', function() {
-    expect.strictEqual(inRange(2, 5, 1), true);
-    expect.strictEqual(inRange(-3, -2, -6), true);
+  test('should swap `start` and `end` when `start` > `end`', () => {
+    expect(inRange(2, 5, 1)).toStrictEqual(true);
+    expect(inRange(-3, -2, -6)).toStrictEqual(true);
   });
 
-  it('should work with a floating point `n` value', function() {
-    expect.strictEqual(inRange(0.5, 5), true);
-    expect.strictEqual(inRange(1.2, 1, 5), true);
-    expect.strictEqual(inRange(5.2, 5), false);
-    expect.strictEqual(inRange(0.5, 1, 5), false);
+  test('should work with a floating point `n` value', () => {
+    expect(inRange(0.5, 5)).toStrictEqual(true);
+    expect(inRange(1.2, 1, 5)).toStrictEqual(true);
+    expect(inRange(5.2, 5)).toStrictEqual(false);
+    expect(inRange(0.5, 1, 5)).toStrictEqual(false);
   });
 
-  it('should coerce arguments to finite numbers', function() {
-    var actual = [
+  test('should coerce arguments to finite numbers', () => {
+    const actual = [
       inRange(0, '1'),
       inRange(0, '0', 1),
       inRange(0, 0, '1'),
@@ -52,7 +54,6 @@ describe('inRange', () => {
       inRange(-1, -1, NaN)
     ];
 
-    expect.deepStrictEqual(actual, lodashStable.map(actual, stubTrue));
+    expect(lodashStable.map(actual, stubTrue)).toStrictEqual(actual);
   });
-  */
 });
