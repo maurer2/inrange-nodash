@@ -1,7 +1,6 @@
 import lodashStable from 'lodash';
-import { falsey, stubTrue } from './utils.js';
-import inRange from './inRange.js';
-import { escapeComponent } from 'uri-js';
+import { falsey, stubTrue } from '../src/utils.js';
+import inRange from '../src/inRange.js';
 
 describe('inRange', () => {
   test('dummy, function', () => {

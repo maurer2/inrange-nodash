@@ -8,12 +8,17 @@
   "dependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
     "babel-jest": "^24.7.1",
+    "babel-register": "^6.26.0",
+    "bdd": "^1.0.0",
     "esm": "^3.2.22",
     "jest": "^24.7.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "mocha": "^6.0.2"
   },
   "scripts": {
-    "test": "jest"
+    "test:jest": "jest ./test/*.jest.test.js",
+    "test:mocha": "mocha --require @babel/register ./test/*.mocha.test.js"
   }
 }
