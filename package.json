@@ -2,7 +2,6 @@
   "name": "inRange-test",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/lodash/lodash.git",
   "author": "Martin",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +17,8 @@
     "mocha": "^6.0.2"
   },
   "scripts": {
-    "test:jest": "jest ./test/*.jest.test.js",
-    "test:mocha": "mocha --require @babel/register ./test/*.mocha.test.js"
+    "test:jest": "jest ./test/inRange.jest.test.js",
+    "test-vanilla:jest": "jest ./test/inRange-vanilla.jest.test.js",
+    "test:mocha": "mocha --require @babel/register ./test/inRange.mocha.test.js"    
   }
 }
