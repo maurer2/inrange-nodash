@@ -19,6 +19,7 @@
   "scripts": {
     "test:jest": "jest ./test/inRange.jest.test.js",
     "test-vanilla:jest": "jest ./test/inRange-vanilla.jest.test.js",
+    "test-vanilla-improved:jest": "jest ./test/inRange-vanilla-improved.jest.test.js",
     "test:mocha": "mocha --require @babel/register ./test/inRange.mocha.test.js"    
   }
 }
